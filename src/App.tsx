@@ -1,20 +1,14 @@
-import React from 'react';
-import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/sections/Hero';
-import { Features } from './components/sections/Features';
-import { PaymentSection } from './components/sections/PaymentSection';
-import { Footer } from './components/sections/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthPage } from './components/auth/AuthPage';
+import Home from './pages/Home';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Features />
-      <PaymentSection />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<AuthPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
